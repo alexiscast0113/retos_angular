@@ -1,0 +1,22 @@
+<h2>Reto 4: Semáforo interactivo</h2>
+
+<button (click)="cambiarColor('red')">Rojo</button>
+<button (click)="cambiarColor('yellow')">Amarillo</button>
+<button (click)="cambiarColor('green')">Verde</button>
+
+<div [style.backgroundColor]="colorActual" style="width: 100px; height: 100px; border-radius: 50%;"></div>
+
+@switch (colorActual) {
+    @case ('red') {
+        <p>{{ mensaje }}</p>
+    }
+    @case ('yellow') {
+        <p>{{ mensaje }}</p>
+    }
+    @case ('green') {
+        <p>{{ mensaje }}</p>
+    }
+    @default {
+        <p>{{ mensaje }}</p>
+    }
+}

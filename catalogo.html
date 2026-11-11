@@ -1,0 +1,13 @@
+<h1>Reto 2: catalogo de 5 productos</h1>
+
+@for (prod of productos; track prod.nombre){
+<ul>
+    <li>
+        <b>{{prod.nombre}}</b> - categoria: {{prod.categoria}} - precio: ${{prod.precio}}
+
+        @if(prod.precio > 100000){
+        <span>- producto costoso -</span>
+        }
+    </li>
+</ul>
+}

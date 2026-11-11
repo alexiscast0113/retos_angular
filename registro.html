@@ -1,0 +1,27 @@
+<h2>Reto 3: Registro de estudiantes</h2>
+
+<label>Nombre:</label><br>
+<input type="text" [(ngModel)]="nombre">
+
+<label>Programa:</label><br>
+<input type="text" [(ngModel)]="programa">
+
+<label>Edad:</label><br>
+<input type="number" [(ngModel)]="edad">
+
+<button (click)="registrar()">Registrar</button>
+
+@if (mensaje) {
+<p>{{ mensaje }}</p>
+}
+
+<h3>Lista de estudiantes:</h3>
+<ul>
+    @for (est of estudiantes; track est.nombre) {
+    <li>
+        {{ est.nombre }} - {{ est.programa }} - {{ est.edad }} años
+    </li>
+    } @empty {
+    <p>No hay estudiantes registrados.</p>
+    }
+</ul>

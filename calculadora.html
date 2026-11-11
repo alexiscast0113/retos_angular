@@ -1,0 +1,17 @@
+<h1>Reto 1: calculadora de dos numeros</h1>
+<p>Numero 1: 
+    <input type="number" [(ngModel)]="num1">
+</p>
+<p>Numero 2: 
+    <input type="number" [(ngModel)]="num2">
+</p>
+<button (click)="sumar()">Sumar</button>
+<button (click)="restar()">Restar</button>
+
+@if (mensaje){
+    <p>{{mensaje}}</p>
+}
+
+@if (resultado){
+    <p>resultado: {{resultado}}</p>
+}

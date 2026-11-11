@@ -1,0 +1,29 @@
+<h2>Reto 5: Control de inventario básico</h2>
+
+<label>Nombre:</label><br>
+<input type="text" [(ngModel)]="nombre"><br>
+
+<label>Cantidad:</label><br>
+<input type="number" [(ngModel)]="cantidad"><br>
+
+<label>Precio:</label><br>
+<input type="number" [(ngModel)]="precio"><br>
+
+<button (click)="agregar()">Registrar</button>
+
+@if (mensaje) {
+<p>{{ mensaje }}</p>
+}
+
+<h3>Lista de productos:</h3>
+<ul>
+    @for (prod of productos; track prod.nombre; let i = $index) {
+    <li>
+        {{ prod.nombre }} - Cantidad: {{ prod.cantidad }} - Precio: ${{ prod.precio }} - Total: ${{ prod.cantidad *
+        prod.precio }}
+        <button (click)="eliminar(i)">Eliminar</button>
+    </li>
+    } @empty {
+    <p>No hay productos registrados.</p>
+    }
+</ul>
